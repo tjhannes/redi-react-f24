@@ -1,7 +1,4 @@
-import { useState } from 'react'
-import './App.css'
-import FilterBar from './components/FilterBar';
-import Animals from './components/Animals';
+import "./App.css";
 
 function App() {
   const animals = [
@@ -49,15 +46,7 @@ function App() {
     },
   ];
 
-  const [selectorsChoice, setSelectorsChoice] = useState(false);
-  const updateSelectorsChoice = (value) => { setSelectorsChoice(value); }
-
-  const animalsSelectorsChoice = animals.filter(animal => animal.selectorsChoice);
-
-  return <div className="App">
-    <FilterBar filter={selectorsChoice} updateFilter={updateSelectorsChoice} />
-    <Animals list={selectorsChoice ? animalsSelectorsChoice : animals} />
-  </div>;
+  return <div>Zoo App</div>;
 }
 
-export default App
+export default App;
