@@ -46,7 +46,7 @@ function App() {
     },
   ];
 
-  return <div>Zoo App</div>;
+  return <div>Zoo App with {animals.length} animals and corresponding images.</div>;
 }
 
 export default App;
