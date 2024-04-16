@@ -1,0 +1,18 @@
+.button {
+  border: 1px solid indianred;
+  padding: 5px 10px;
+}
+
+.showcase-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.app-container p {
+  margin: 20px 0px 0px 5px;
+  font-style: italic;
+}

@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import './App.css'
-import FilterBar from './components/FilterBar';
-import Animals from './components/Animals';
+
+import "./App.css";
+
 
 function App() {
   const animals = [
@@ -49,15 +48,37 @@ function App() {
     },
   ];
 
-  const [selectorsChoice, setSelectorsChoice] = useState(false);
-  const updateSelectorsChoice = (value) => { setSelectorsChoice(value); }
+  return (
+    <div className="App">
 
-  const animalsSelectorsChoice = animals.filter(animal => animal.selectorsChoice);
+      <div className="header">
+        <nav className="header__nav">
+          <div className={"header-mi active"}>All Cute Animals</div>
+          <div className={"header-mi"}>Selectors Choice</div>
+        </nav>
+        <div className="header__logo"></div>
+      </div>
 
-  return <div className="App">
-    <FilterBar filter={selectorsChoice} updateFilter={updateSelectorsChoice} />
-    <Animals list={selectorsChoice ? animalsSelectorsChoice : animals} />
-  </div>;
+      <div className="animals-list">
+        {animals.map((animal, index) => (
+          <div className="animal-info" key={index}>
+            <figure>
+              <img src={animal.img} alt={animal.name} />
+            </figure>
+            <div>
+              <h2>{animal.name}</h2>
+              <p>{animal.description}</p>
+              <div className="animal-info__location">
+                &#128062;<span>{animal.latinName}</span>
+                &#127758;<span>{animal.region}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+    </div>
+  );
 }
 
-export default App
+export default App;
